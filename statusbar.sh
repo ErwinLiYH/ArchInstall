@@ -14,19 +14,19 @@ dwm_battery() {
     fi
 }
 
-data=$(dwm_datetime)
-battery=$(dwm_battery)
+data=$(dwm_datetime) #init datetime
+battery=$(dwm_battery) #init battery
 
 while true
 do
     for i in $(seq 1 1800)
     do
-        if [ $(expr ${i} % 1) -eq 0 ]#update each 0.5s
+        if [ $(expr ${i} % 1) -eq 0 ] #update each 0.5s
         then
             data=$(dwm_datetime)
         fi
         
-        if [ $(expr ${i} % 2) -eq 0 ]#update each 1s
+        if [ $(expr ${i} % 2) -eq 0 ] #update each 1s
         then
             battery=$(dwm_battery)
         fi
